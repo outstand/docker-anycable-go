@@ -1,4 +1,4 @@
-FROM anycable/anycable-go:1.1.0-alpine as anycable
+FROM anycable/anycable-go:1.1.1-alpine as anycable
 
 FROM alpine:latest
 LABEL maintainer="Ryan Schlesinger <ryan@outstand.com>"
