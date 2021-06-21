@@ -48,5 +48,5 @@ if [ -n "$(ls -A /usr/local/share/ca-certificates)" ]; then
   update-ca-certificates
 fi
 
-set -- /usr/local/bin/anycable-go "$@"
+set -- su-exec nobody /usr/local/bin/anycable-go "$@"
 exec "$@"
