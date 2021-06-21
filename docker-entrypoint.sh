@@ -11,7 +11,7 @@ instance_ip() {
 consul_kv() {
   declare key="$1"
   curl --fail -Ss ${CONSUL_HOST}:8500/v1/kv/${key} \
-    | jq -r ".[0].Value" | base64 --decode
+    | jq -r ".[0].Value" | base64 -d
 }
 
 if [ -z "${ANYCABLE_REDIS_URL:-}" ]; then
