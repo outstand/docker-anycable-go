@@ -2,6 +2,9 @@ FROM golang:alpine as build
 
 RUN apk add --no-cache build-base git
 
+# Extra deps needed for mruby
+# RUN apk add --no-cache build-base git ruby-dev ruby-bundler ruby-bigdecimal ruby-json bison tzdata
+
 WORKDIR /go/src/anycable-go
 RUN git clone https://github.com/outstand/anycable-go.git .
 RUN git checkout allow-tls
