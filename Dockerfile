@@ -4,8 +4,7 @@ RUN apk add --no-cache build-base git
 
 WORKDIR /go/src/anycable-go
 RUN git clone https://github.com/outstand/anycable-go.git .
-RUN git checkout allow-tls && \
-      rm -f .dockerignore
+RUN git checkout allow-tls
 
 ENV MODIFIER=tls
 RUN make build-linux
